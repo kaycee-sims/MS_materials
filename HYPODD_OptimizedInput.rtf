@@ -1,0 +1,89 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2580
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\margl1440\margr1440\vieww35640\viewh20780\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 * fixed depth compiled: /disk/staff/cliff/TexasEQ/DoubleDifference/HYPODD/src/hypoDDfixedD/hypoDDfixedDepth hypoDDpanhandle.inp\
+* RELOC.INP:\
+*--- input file selection\
+* cross correlation diff times:\
+\
+*\
+*catalog P diff times:\
+dt.ct\
+*\
+* event file:\
+event.sel\
+*\
+* station file:\
+okstation.dat\
+*\
+*--- output file selection\
+* original locations:\
+catalog_2011_hyp.xml\
+* relocations:\
+hypoDD.relocpanfixed\
+* station information:\
+hypoDD.sta\
+* residual information:\
+hypoDD.res\
+* source paramater information:\
+hypoDD.src\
+*\
+*--- data type selection: \
+* IDAT:  0 = synthetics; 1= cross corr; 2= catalog; 3= cross & cat \
+* IPHA: 1= P; 2= S; 3= P&S\
+* DIST:max dist [km] between cluster centroid and station \
+* IDAT   IPHA   DIST\
+    2     3     400\
+*\
+*--- event clustering:\
+* OBSCC:    min # of obs/pair for crosstime data (0= no clustering)\
+* OBSCT:    min # of obs/pair for network data (0= no clustering)\
+* OBSCC  OBSCT    \
+     0     5        \
+*\
+*--- solution control:\
+* ISTART:  	1 = from single source; 2 = from network sources\
+* ISOLV:	1 = SVD, 2=lsqr\
+* NSET:      	number of sets of iteration with specifications following\
+*  ISTART  ISOLV  NSET\
+    2        2      4\
+*\
+*--- data weighting and re-weighting: \
+* NITER: 		last iteration to used the following weights\
+* WTCCP, WTCCS:		weight cross P, S \
+* WTCTP, WTCTS:		weight catalog P, S \
+* WRCC, WRCT:		residual threshold in sec for cross, catalog data \
+* WDCC, WDCT:  		max dist [km] between cross, catalog linked pairs\
+* DAMP:    		damping (for lsqr only) \
+*       ---  CROSS DATA ----- ----CATALOG DATA ----\
+* NITER WTCCP WTCCS WRCC WDCC WTCTP WTCTS WRCT WDCT DAMP\
+   4     -9    -9     -9 -9   1.0    0.7      9  3.0   100\
+   4     -9    -9    -9  -9   1.0    0.7   8  3.0   80\
+   4     -9    -9    -9  -9   1.0    0.7   7  3.0   60\
+   4     -9     -9    -9  -9   1.0    0.7   7  3.0  40\
+*--- 1D model:\
+* NLAY:		number of model layers  \
+* RATIO:	vp/vs ratio \
+* TOP:		depths of top of layer (km) \
+* VEL: 		layer velocities (km/s)\
+* NLAY  RATIO \
+   6    1.73\
+* TOP \
+0.0 3.0 6.0 14.0 25.0 40.0\
+* VEL\
+3.77 4.64 5.34 5.75 6.22 7.98\
+*0.0 2.0 10.0 37.0 43.0\
+* VEL\
+*3.6 6.05 6.55 7.0 8.0\
+*\
+*--- event selection:\
+* CID: 	cluster to be relocated (0 = all)\
+* ID:	cuspids of event to be relocated (8 per line)\
+* CID    \
+    0      \
+* ID\
+}
